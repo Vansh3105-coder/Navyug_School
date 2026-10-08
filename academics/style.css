@@ -1,0 +1,2788 @@
+/* =====================================================
+   NAVYUG PUBLIC SR. SEC. SCHOOL
+   ACADEMICS PAGE
+===================================================== */
+
+
+/* =====================================================
+   ROOT
+===================================================== */
+
+:root {
+
+    --navy: #0B1F3A;
+    --navy-light: #132F52;
+
+    --blue: #1769AA;
+    --blue-bright: #2F80ED;
+    --blue-light: #EEF6FF;
+
+    --white: #FFFFFF;
+    --cream: #F8FAFC;
+    --soft: #F5F7FA;
+
+    --text: #17202A;
+    --muted: #667085;
+
+    --border: rgba(11, 31, 58, 0.12);
+
+    --serif: "Playfair Display", serif;
+
+    --container: 1240px;
+
+}
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    font-family: "DM Sans", sans-serif;
+
+    background: var(--white);
+
+    color: var(--text);
+
+    line-height: 1.6;
+
+    overflow-x: hidden;
+
+}
+
+
+body.menu-open {
+    overflow: hidden;
+}
+
+
+img {
+    display: block;
+    width: 100%;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+
+.container {
+
+    width: min(
+        calc(100% - 80px),
+        var(--container)
+    );
+
+    margin: auto;
+
+}
+
+
+.section-padding {
+
+    padding: 120px 0;
+
+}
+
+
+/* =====================================================
+   PAGE LOADER
+===================================================== */
+
+.page-loader {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    background: var(--navy);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    transition:
+        opacity 0.5s ease,
+        visibility 0.5s ease;
+
+}
+
+
+.page-loader.hide {
+
+    opacity: 0;
+
+    visibility: hidden;
+
+}
+
+
+.loader-inner {
+
+    display: flex;
+
+    gap: 8px;
+
+}
+
+
+.loader-inner span {
+
+    width: 8px;
+
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: var(--white);
+
+    animation: loader 1s infinite ease-in-out;
+
+}
+
+
+.loader-inner span:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+
+.loader-inner span:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+
+@keyframes loader {
+
+    0%,
+    80%,
+    100% {
+        transform: scale(0.5);
+        opacity: 0.4;
+    }
+
+    40% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.navbar {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 1000;
+
+    background: rgba(255,255,255,0.97);
+
+    border-bottom: 1px solid transparent;
+
+    transition:
+        background 0.3s ease,
+        box-shadow 0.3s ease,
+        border 0.3s ease;
+
+}
+
+
+.navbar.scrolled {
+
+    box-shadow:
+        0 10px 30px rgba(11,31,58,0.08);
+
+    border-color: var(--border);
+
+}
+
+
+.nav-container {
+
+    width: min(
+        calc(100% - 60px),
+        1400px
+    );
+
+    height: 82px;
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+}
+
+
+.logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+
+.logo-mark {
+
+    width: 42px;
+
+    height: 42px;
+
+    background: var(--navy);
+
+    color: var(--white);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-family: var(--serif);
+
+    font-size: 22px;
+
+}
+
+
+.logo-text {
+
+    display: flex;
+
+    flex-direction: column;
+
+    line-height: 1.1;
+
+}
+
+
+.logo-text strong {
+
+    font-size: 16px;
+
+    letter-spacing: 1.5px;
+
+    color: var(--navy);
+
+}
+
+
+.logo-text span {
+
+    font-size: 8px;
+
+    letter-spacing: 1.5px;
+
+    color: var(--muted);
+
+    margin-top: 4px;
+
+}
+
+
+/* =====================================================
+   DESKTOP NAV
+===================================================== */
+
+.desktop-nav {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 22px;
+
+}
+
+
+.desktop-nav a {
+
+    position: relative;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    color: var(--text);
+
+    transition: color 0.25s ease;
+
+}
+
+
+.desktop-nav a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -8px;
+
+    width: 0;
+
+    height: 2px;
+
+    background: var(--blue);
+
+    transition: width 0.25s ease;
+
+}
+
+
+.desktop-nav a:hover,
+.desktop-nav a.active {
+
+    color: var(--blue);
+
+}
+
+
+.desktop-nav a:hover::after,
+.desktop-nav a.active::after {
+
+    width: 100%;
+
+}
+
+
+/* =====================================================
+   MOBILE MENU
+===================================================== */
+
+.menu-toggle {
+
+    display: none;
+
+    width: 44px;
+
+    height: 44px;
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    gap: 6px;
+
+}
+
+
+.menu-toggle span {
+
+    display: block;
+
+    width: 25px;
+
+    height: 2px;
+
+    background: var(--navy);
+
+    transition: 0.3s ease;
+
+}
+
+
+.menu-toggle.active span:nth-child(1) {
+
+    transform:
+        translateY(8px)
+        rotate(45deg);
+
+}
+
+
+.menu-toggle.active span:nth-child(2) {
+
+    opacity: 0;
+
+}
+
+
+.menu-toggle.active span:nth-child(3) {
+
+    transform:
+        translateY(-8px)
+        rotate(-45deg);
+
+}
+
+
+.mobile-menu {
+
+    display: none;
+
+}
+
+
+/* =====================================================
+   PAGE HERO
+===================================================== */
+
+.page-hero {
+
+    position: relative;
+
+    height: 620px;
+
+    margin-top: 82px;
+
+    overflow: hidden;
+
+}
+
+
+.hero-image {
+
+    position: absolute;
+
+    inset: 0;
+
+}
+
+
+.hero-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+}
+
+
+.hero-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5, 18, 35, 0.98) 0%,
+            rgba(8, 27, 50, 0.94) 45%,
+            rgba(8, 27, 50, 0.82) 100%
+        );
+}
+
+
+.hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    height: 100%;
+
+    width: min(
+        calc(100% - 80px),
+        var(--container)
+    );
+
+    margin: auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    color: var(--white);
+
+    max-width: 850px;
+
+}
+
+
+.hero-label {
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 22px;
+
+}
+
+
+.hero-content h1 {
+
+    font-family: var(--serif);
+
+    font-size: clamp(60px, 8vw, 110px);
+
+    font-weight: 500;
+
+    line-height: 0.95;
+
+    margin-bottom: 30px;
+
+}
+
+
+.hero-content p {
+
+    max-width: 650px;
+
+    font-size: 18px;
+
+    color: rgba(255,255,255,0.85);
+
+}
+
+
+/* =====================================================
+   COMMON HEADINGS
+===================================================== */
+
+.section-label {
+
+    display: block;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    color: var(--blue);
+
+    margin-bottom: 15px;
+
+}
+
+
+.section-heading h2,
+.subjects-heading h2,
+.methodology-content h2,
+.support-content h2 {
+
+    font-family: var(--serif);
+
+    font-size: clamp(40px, 5vw, 68px);
+
+    font-weight: 500;
+
+    line-height: 1.08;
+
+    color: var(--navy);
+
+}
+
+
+.section-heading h2 span,
+.subjects-heading h2 span,
+.methodology-content h2 span,
+.support-content h2 span {
+
+    color: var(--blue);
+
+}
+
+
+.centered {
+
+    text-align: center;
+
+    max-width: 800px;
+
+    margin: auto;
+
+}
+
+
+.centered p {
+
+    margin-top: 25px;
+
+    color: var(--muted);
+
+}
+
+
+/* =====================================================
+   INTRO
+===================================================== */
+
+.academic-intro {
+
+    background: var(--white);
+
+}
+
+
+.intro-grid {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 100px;
+
+    align-items: center;
+
+}
+
+
+.intro-text {
+
+    border-left: 1px solid var(--border);
+
+    padding-left: 50px;
+
+}
+
+
+.intro-text p {
+
+    color: var(--muted);
+
+    font-size: 16px;
+
+    margin-bottom: 22px;
+
+}
+
+
+.intro-text p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =====================================================
+   ACADEMIC LEVELS
+===================================================== */
+
+.academic-levels {
+
+    background: var(--cream);
+
+}
+
+
+.level-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    margin-top: 70px;
+
+    border-top: 1px solid var(--border);
+
+    border-left: 1px solid var(--border);
+
+}
+
+
+.level-card {
+
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns: 90px 1fr;
+
+    gap: 30px;
+
+    padding: 55px 45px;
+
+    border-right: 1px solid var(--border);
+
+    border-bottom: 1px solid var(--border);
+
+    background: rgba(255,255,255,0.5);
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+
+}
+
+
+.level-card:hover {
+
+    background: var(--white);
+
+    transform: translateY(-5px);
+
+}
+
+
+.level-number {
+
+    font-family: var(--serif);
+
+    font-size: 32px;
+
+    color: var(--blue);
+
+}
+
+
+.level-tag {
+
+    display: inline-block;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    color: var(--blue);
+
+    margin-bottom: 10px;
+
+}
+
+
+.level-content h3 {
+
+    font-family: var(--serif);
+
+    font-size: 30px;
+
+    font-weight: 500;
+
+    color: var(--navy);
+
+    margin-bottom: 15px;
+
+}
+
+
+.level-content p {
+
+    color: var(--muted);
+
+    font-size: 14px;
+
+}
+
+
+.level-line {
+
+    width: 45px;
+
+    height: 1px;
+
+    background: var(--blue);
+
+    margin: 25px 0 15px;
+
+}
+
+
+.level-focus {
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    color: var(--navy);
+
+}
+
+
+/* =====================================================
+   SUBJECTS
+===================================================== */
+
+.subjects {
+
+    background: var(--white);
+
+}
+
+
+.subjects-heading {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-end;
+
+    gap: 60px;
+
+    margin-bottom: 65px;
+
+}
+
+
+.subjects-heading > p {
+
+    max-width: 400px;
+
+    color: var(--muted);
+
+}
+
+
+.subject-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    border-top: 1px solid var(--border);
+
+    border-left: 1px solid var(--border);
+
+}
+
+
+.subject-card {
+
+    min-height: 250px;
+
+    padding: 35px;
+
+    border-right: 1px solid var(--border);
+
+    border-bottom: 1px solid var(--border);
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+
+}
+
+
+.subject-card:hover {
+
+    background: var(--blue-light);
+
+    transform: translateY(-5px);
+
+}
+
+
+.subject-number {
+
+    display: block;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    color: var(--blue);
+
+    margin-bottom: 55px;
+
+}
+
+
+.subject-card h3 {
+
+    font-family: var(--serif);
+
+    font-size: 28px;
+
+    font-weight: 500;
+
+    color: var(--navy);
+
+    margin-bottom: 10px;
+
+}
+
+
+.subject-card p {
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+}
+
+
+/* =====================================================
+   METHODOLOGY
+===================================================== */
+
+.methodology {
+
+    background: var(--cream);
+
+}
+
+
+.methodology-grid {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 90px;
+
+    align-items: center;
+
+}
+
+
+.methodology-image {
+
+    position: relative;
+
+    height: 650px;
+
+    overflow: hidden;
+
+}
+
+
+.methodology-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+}
+
+
+.image-caption {
+
+    position: absolute;
+
+    bottom: 25px;
+
+    left: 25px;
+
+    right: 25px;
+
+    padding: 15px 20px;
+
+    background: rgba(11,31,58,0.9);
+
+    color: var(--white);
+
+    font-size: 12px;
+
+}
+
+
+.methodology-content > p {
+
+    margin: 30px 0 40px;
+
+    color: var(--muted);
+
+}
+
+
+.method-list {
+
+    border-top: 1px solid var(--border);
+
+}
+
+
+.method-item {
+
+    display: grid;
+
+    grid-template-columns: 50px 1fr;
+
+    gap: 20px;
+
+    padding: 25px 0;
+
+    border-bottom: 1px solid var(--border);
+
+}
+
+
+.method-icon {
+
+    font-family: var(--serif);
+
+    color: var(--blue);
+
+}
+
+
+.method-item h3 {
+
+    font-size: 16px;
+
+    color: var(--navy);
+
+    margin-bottom: 6px;
+
+}
+
+
+.method-item p {
+
+    font-size: 13px;
+
+    color: var(--muted);
+
+}
+
+
+/* =====================================================
+   ASSESSMENT
+===================================================== */
+
+.assessment {
+
+    background: var(--white);
+
+}
+
+
+.assessment-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    margin-top: 70px;
+
+    border-top: 1px solid var(--border);
+
+    border-left: 1px solid var(--border);
+
+}
+
+
+.assessment-card {
+
+    padding: 40px 30px;
+
+    min-height: 300px;
+
+    border-right: 1px solid var(--border);
+
+    border-bottom: 1px solid var(--border);
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+
+}
+
+
+.assessment-card:hover {
+
+    background: var(--blue-light);
+
+    transform: translateY(-5px);
+
+}
+
+
+.assessment-icon {
+
+    font-family: var(--serif);
+
+    font-size: 30px;
+
+    color: var(--blue);
+
+    margin-bottom: 65px;
+
+}
+
+
+.assessment-card h3 {
+
+    font-family: var(--serif);
+
+    font-size: 24px;
+
+    font-weight: 500;
+
+    color: var(--navy);
+
+    margin-bottom: 12px;
+
+}
+
+
+.assessment-card p {
+
+    font-size: 13px;
+
+    color: var(--muted);
+
+}
+
+
+/* =====================================================
+   SUPPORT
+===================================================== */
+
+.support {
+
+    background: var(--cream);
+
+}
+
+
+.support-box {
+
+    background: var(--navy);
+
+    color: var(--white);
+
+    padding: 75px;
+
+    display: grid;
+
+    grid-template-columns: 1.2fr 0.8fr;
+
+    gap: 100px;
+
+}
+
+
+.support-content .section-label {
+
+    color: #70B7FF;
+
+}
+
+
+.support-content h2 {
+
+    color: var(--white);
+
+}
+
+
+.support-content h2 span {
+
+    color: #70B7FF;
+
+}
+
+
+.support-content p {
+
+    margin-top: 30px;
+
+    max-width: 650px;
+
+    color: rgba(255,255,255,0.7);
+
+}
+
+
+.support-points {
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    gap: 18px;
+
+}
+
+
+.support-points div {
+
+    padding-bottom: 18px;
+
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+
+    font-size: 14px;
+
+    color: rgba(255,255,255,0.85);
+
+}
+
+
+.support-points span {
+
+    color: #70B7FF;
+
+    margin-right: 12px;
+
+}
+
+
+/* =====================================================
+   CTA
+===================================================== */
+
+.academic-cta {
+
+    position: relative;
+
+    min-height: 560px;
+
+    background-image:
+        url("../images/campus.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    display: flex;
+
+    align-items: center;
+
+}
+
+
+.cta-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(11,31,58,0.95),
+            rgba(11,31,58,0.65)
+        );
+
+}
+
+
+.cta-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    color: var(--white);
+
+    max-width: 800px;
+
+}
+
+
+.cta-content .section-label {
+
+    color: #70B7FF;
+
+}
+
+
+.cta-content h2 {
+
+    font-family: var(--serif);
+
+    font-size: clamp(45px, 6vw, 75px);
+
+    font-weight: 500;
+
+    line-height: 1.05;
+
+    margin-bottom: 25px;
+
+}
+
+
+.cta-content h2 span {
+
+    color: #70B7FF;
+
+}
+
+
+.cta-content p {
+
+    max-width: 600px;
+
+    color: rgba(255,255,255,0.75);
+
+    margin-bottom: 35px;
+
+}
+
+
+.cta-buttons {
+
+    display: flex;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+
+}
+
+
+.btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 50px;
+
+    padding: 0 25px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+
+}
+
+
+.btn:hover {
+
+    transform: translateY(-3px);
+
+}
+
+
+.btn-primary {
+
+    background: var(--white);
+
+    color: var(--navy);
+
+}
+
+
+.btn-primary:hover {
+
+    background: #E8F3FF;
+
+}
+
+
+.btn-outline {
+
+    border: 1px solid rgba(255,255,255,0.5);
+
+    color: var(--white);
+
+}
+
+
+.btn-outline:hover {
+
+    background: rgba(255,255,255,0.1);
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer {
+
+    background: #07182D;
+
+    color: var(--white);
+
+    padding: 80px 0 25px;
+
+}
+
+
+.footer-grid {
+
+    display: grid;
+
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+
+    gap: 60px;
+
+    padding-bottom: 60px;
+
+}
+
+
+.footer-brand p {
+
+    max-width: 330px;
+
+    margin-top: 25px;
+
+    color: rgba(255,255,255,0.55);
+
+    font-size: 13px;
+
+}
+
+
+.footer-logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+
+.footer-logo .logo-mark {
+
+    background: var(--white);
+
+    color: var(--navy);
+
+}
+
+
+.footer-logo .logo-text strong {
+
+    color: var(--white);
+
+}
+
+
+.footer-logo .logo-text span {
+
+    color: rgba(255,255,255,0.5);
+
+}
+
+
+.footer-column {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 12px;
+
+}
+
+
+.footer-column h3 {
+
+    font-size: 12px;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.footer-column a,
+.footer-column p {
+
+    font-size: 12px;
+
+    color: rgba(255,255,255,0.55);
+
+    transition: color 0.25s ease;
+
+}
+
+
+.footer-column a:hover {
+
+    color: var(--white);
+
+}
+
+
+.footer-contact p {
+
+    line-height: 1.8;
+
+}
+
+
+.footer-bottom {
+
+    padding-top: 25px;
+
+    border-top: 1px solid rgba(255,255,255,0.1);
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    color: rgba(255,255,255,0.4);
+
+    font-size: 10px;
+
+}
+
+
+/* =====================================================
+   SCROLL REVEAL
+===================================================== */
+
+.reveal {
+
+    opacity: 0;
+
+    transform: translateY(35px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+
+}
+
+
+.reveal.visible {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1150px) {
+
+    .desktop-nav {
+        gap: 14px;
+    }
+
+    .desktop-nav a {
+        font-size: 11px;
+    }
+
+    .intro-grid,
+    .methodology-grid {
+        gap: 60px;
+    }
+
+    .assessment-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 950px) {
+
+    .desktop-nav {
+        display: none;
+    }
+
+
+    .menu-toggle {
+        display: flex;
+    }
+
+
+    .mobile-menu {
+
+        position: absolute;
+
+        top: 82px;
+
+        left: 0;
+
+        width: 100%;
+
+        max-height: 0;
+
+        overflow: hidden;
+
+        display: flex;
+
+        flex-direction: column;
+
+        background: var(--white);
+
+        border-bottom: 1px solid var(--border);
+
+        transition:
+            max-height 0.4s ease;
+
+    }
+
+
+    .mobile-menu.open {
+
+        max-height: 600px;
+
+        overflow-y: auto;
+
+    }
+
+
+    .mobile-menu a {
+
+        padding: 17px 30px;
+
+        border-bottom: 1px solid var(--border);
+
+        font-size: 13px;
+
+        font-weight: 600;
+
+    }
+
+
+    .mobile-menu a.active {
+
+        color: var(--blue);
+
+        background: var(--blue-light);
+
+    }
+
+
+    .intro-grid,
+    .methodology-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .intro-text {
+
+        padding-left: 30px;
+
+    }
+
+
+    .subject-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+
+    .support-box {
+
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+
+    }
+
+
+    .footer-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .container {
+
+        width: min(
+            calc(100% - 40px),
+            var(--container)
+        );
+
+    }
+
+
+    .section-padding {
+
+        padding: 80px 0;
+
+    }
+
+
+    .nav-container {
+
+        width: calc(100% - 40px);
+
+    }
+
+
+    .logo-text span {
+
+        font-size: 7px;
+
+    }
+
+
+    .page-hero {
+
+        height: 500px;
+
+    }
+
+
+    .hero-content {
+
+        width: calc(100% - 40px);
+
+    }
+
+
+    .hero-content h1 {
+
+        font-size: 58px;
+
+    }
+
+
+    .hero-content p {
+
+        font-size: 15px;
+
+    }
+
+
+    .level-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .level-card {
+
+        grid-template-columns: 60px 1fr;
+
+        padding: 35px 25px;
+
+    }
+
+
+    .level-content h3 {
+
+        font-size: 25px;
+
+    }
+
+
+    .subjects-heading {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 25px;
+
+    }
+
+
+    .subject-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .subject-card {
+
+        min-height: 220px;
+
+    }
+
+
+    .methodology-image {
+
+        height: 450px;
+
+    }
+
+
+    .assessment-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .assessment-card {
+
+        min-height: auto;
+
+    }
+
+
+    .support-box {
+
+        padding: 40px 25px;
+
+    }
+
+
+    .academic-cta {
+
+        min-height: 520px;
+
+    }
+
+
+    .footer-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+
+    }
+
+
+    .footer-bottom {
+
+        flex-direction: column;
+
+    }
+
+}
+
+
+@media (max-width: 450px) {
+
+    .logo-text strong {
+
+        font-size: 14px;
+
+    }
+
+
+    .logo-text span {
+
+        font-size: 6px;
+
+        letter-spacing: 1px;
+
+    }
+
+
+    .logo-mark {
+
+        width: 38px;
+
+        height: 38px;
+
+    }
+
+
+    .hero-content h1 {
+
+        font-size: 50px;
+
+    }
+
+
+    .level-card {
+
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+
+    }
+
+
+    .level-number {
+
+        font-size: 24px;
+
+    }
+
+
+    .cta-content h2 {
+
+        font-size: 43px;
+
+    }
+
+}
+/* =====================================================
+   EXPANDABLE ACADEMIC LEVEL CARDS
+===================================================== */
+
+.level-card {
+    padding: 0;
+    display: block;
+    overflow: hidden;
+}
+
+
+.level-trigger {
+
+    width: 100%;
+
+    min-height: 230px;
+
+    padding: 45px;
+
+    border: none;
+
+    background: transparent;
+
+    color: inherit;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    display: grid;
+
+    grid-template-columns: 70px 1fr 35px;
+
+    gap: 25px;
+
+    align-items: start;
+
+}
+
+
+.level-trigger:hover {
+    background: var(--white);
+}
+
+
+.level-heading h3 {
+
+    font-family: var(--serif);
+
+    font-size: 30px;
+
+    font-weight: 500;
+
+    color: var(--navy);
+
+    margin: 5px 0 0;
+
+}
+
+
+.level-arrow {
+
+    width: 32px;
+
+    height: 32px;
+
+    border: 1px solid var(--border);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 20px;
+
+    font-weight: 400;
+
+    color: var(--blue);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        color 0.3s ease;
+
+}
+
+
+.level-card.active .level-arrow {
+
+    background: var(--navy);
+
+    color: var(--white);
+
+    transform: rotate(180deg);
+
+}
+
+
+.level-extra {
+
+    display: grid;
+
+    grid-template-rows: 0fr;
+
+    opacity: 0;
+
+    transition:
+        grid-template-rows 0.45s ease,
+        opacity 0.35s ease;
+
+}
+
+
+.level-extra-inner {
+
+    min-height: 0;
+
+    overflow: hidden;
+
+    padding: 0 45px 0 140px;
+
+    transform: translateY(-10px);
+
+    transition:
+        padding 0.45s ease,
+        transform 0.45s ease;
+
+}
+
+
+.level-card.active .level-extra {
+
+    grid-template-rows: 1fr;
+
+    opacity: 1;
+
+}
+
+
+.level-card.active .level-extra-inner {
+
+    padding-top: 0;
+
+    padding-bottom: 40px;
+
+    transform: translateY(0);
+
+}
+
+
+.level-extra-inner p {
+
+    color: var(--muted);
+
+    font-size: 14px;
+
+    max-width: 650px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.level-details {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+}
+
+
+.level-details span {
+
+    padding: 8px 13px;
+
+    background: var(--blue-light);
+
+    color: var(--blue);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+
+}
+
+
+
+/* =====================================================
+   EXPANDABLE ASSESSMENT CARDS
+===================================================== */
+
+.assessment-card {
+
+    padding: 0;
+
+    overflow: hidden;
+
+}
+
+
+.assessment-trigger {
+
+    position: relative;
+
+    width: 100%;
+
+    min-height: 300px;
+
+    padding: 40px 30px;
+
+    border: none;
+
+    background: transparent;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    color: inherit;
+
+}
+
+
+.assessment-trigger:hover {
+
+    background: var(--blue-light);
+
+}
+
+
+.assessment-trigger .assessment-icon {
+
+    margin-bottom: 65px;
+
+}
+
+
+.assessment-trigger h3 {
+
+    font-family: var(--serif);
+
+    font-size: 24px;
+
+    font-weight: 500;
+
+    color: var(--navy);
+
+    margin: 0;
+
+    padding-right: 35px;
+
+}
+
+
+.assessment-arrow {
+
+    position: absolute;
+
+    top: 35px;
+
+    right: 30px;
+
+    width: 30px;
+
+    height: 30px;
+
+    border: 1px solid var(--border);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: var(--blue);
+
+    font-size: 19px;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        color 0.3s ease;
+
+}
+
+
+.assessment-card.active .assessment-arrow {
+
+    background: var(--navy);
+
+    color: var(--white);
+
+    transform: rotate(180deg);
+
+}
+
+
+.assessment-extra {
+
+    display: grid;
+
+    grid-template-rows: 0fr;
+
+    opacity: 0;
+
+    transition:
+        grid-template-rows 0.45s ease,
+        opacity 0.35s ease;
+
+}
+
+
+.assessment-extra-inner {
+
+    min-height: 0;
+
+    overflow: hidden;
+
+    padding: 0 30px;
+
+    transform: translateY(-10px);
+
+    transition:
+        padding 0.45s ease,
+        transform 0.45s ease;
+
+}
+
+
+.assessment-card.active .assessment-extra {
+
+    grid-template-rows: 1fr;
+
+    opacity: 1;
+
+}
+
+
+.assessment-card.active .assessment-extra-inner {
+
+    padding-bottom: 35px;
+
+    transform: translateY(0);
+
+}
+
+
+.assessment-extra-inner p {
+
+    font-size: 13px;
+
+    color: var(--muted);
+
+    margin-bottom: 20px;
+
+}
+
+
+.assessment-details {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+}
+
+
+.assessment-details span {
+
+    padding: 7px 10px;
+
+    background: var(--blue-light);
+
+    color: var(--blue);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+}
+
+
+
+/* =====================================================
+   MOBILE EXPANDABLE CARDS
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .level-trigger {
+
+        min-height: 190px;
+
+        padding: 30px 25px;
+
+        grid-template-columns: 45px 1fr 30px;
+
+        gap: 15px;
+
+    }
+
+
+    .level-heading h3 {
+
+        font-size: 24px;
+
+    }
+
+
+    .level-number {
+
+        font-size: 24px;
+
+    }
+
+
+    .level-extra-inner {
+
+        padding-left: 25px;
+
+        padding-right: 25px;
+
+    }
+
+
+    .level-card.active .level-extra-inner {
+
+        padding-bottom: 30px;
+
+    }
+
+
+    .assessment-trigger {
+
+        min-height: 240px;
+
+        padding: 30px 25px;
+
+    }
+
+
+    .assessment-trigger .assessment-icon {
+
+        margin-bottom: 45px;
+
+    }
+
+
+    .assessment-trigger h3 {
+
+        font-size: 22px;
+
+    }
+
+
+    .assessment-arrow {
+
+        top: 25px;
+
+        right: 25px;
+
+    }
+
+
+    .assessment-extra-inner {
+
+        padding-left: 25px;
+
+        padding-right: 25px;
+
+    }
+
+
+    .assessment-card.active .assessment-extra-inner {
+
+        padding-bottom: 30px;
+
+    }
+
+}
+/* =====================================================
+   ACADEMICS PAGE — DARKER CONTENT THEME
+   NAVBAR IS NOT TOUCHED
+===================================================== */
+
+
+/* =====================================================
+   INTRO SECTION
+===================================================== */
+
+.academic-intro {
+    background: #F3F6FA;
+}
+
+.intro-text {
+    border-left-color: rgba(11, 31, 58, 0.22);
+}
+
+.intro-text p {
+    color: #536477;
+}
+
+
+/* =====================================================
+   ACADEMIC LEVELS
+===================================================== */
+
+.academic-levels {
+    background: #E7EDF4;
+}
+
+.level-grid {
+    border-top-color: rgba(11, 31, 58, 0.20);
+    border-left-color: rgba(11, 31, 58, 0.20);
+}
+
+.level-card {
+    background: #F4F7FA;
+
+    border-right-color:
+        rgba(11, 31, 58, 0.20);
+
+    border-bottom-color:
+        rgba(11, 31, 58, 0.20);
+}
+
+.level-card:hover {
+    background: #FFFFFF;
+}
+
+.level-number,
+.level-tag {
+    color: #125C99;
+}
+
+.level-content h3,
+.level-heading h3 {
+    color: #07182D;
+}
+
+.level-content p,
+.level-extra-inner p {
+    color: #526277;
+}
+
+.level-line {
+    background: #1769AA;
+}
+
+.level-focus {
+    color: #0B1F3A;
+}
+
+
+/* =====================================================
+   LEVEL EXPAND BUTTON
+===================================================== */
+
+.level-trigger:hover {
+    background: #FFFFFF;
+}
+
+.level-arrow {
+    border-color: rgba(11, 31, 58, 0.22);
+    color: #125C99;
+}
+
+.level-card.active .level-arrow {
+    background: #0B1F3A;
+    color: #FFFFFF;
+}
+
+.level-details span {
+    background: #DCEBFA;
+    color: #125C99;
+}
+
+
+/* =====================================================
+   SUBJECTS
+===================================================== */
+
+.subjects {
+    background: #F3F6FA;
+}
+
+.subjects-heading > p {
+    color: #536477;
+}
+
+.subject-grid {
+    border-top-color:
+        rgba(11, 31, 58, 0.20);
+
+    border-left-color:
+        rgba(11, 31, 58, 0.20);
+}
+
+.subject-card {
+    background: #F8FAFC;
+
+    border-right-color:
+        rgba(11, 31, 58, 0.20);
+
+    border-bottom-color:
+        rgba(11, 31, 58, 0.20);
+}
+
+.subject-card:hover {
+    background: #E1EEF9;
+}
+
+.subject-number {
+    color: #125C99;
+}
+
+.subject-card h3 {
+    color: #07182D;
+}
+
+.subject-card p {
+    color: #526277;
+}
+
+
+/* =====================================================
+   METHODOLOGY
+===================================================== */
+
+.methodology {
+    background: #E7EDF4;
+}
+
+.methodology-content > p {
+    color: #526277;
+}
+
+.method-list {
+    border-top-color:
+        rgba(11, 31, 58, 0.20);
+}
+
+.method-item {
+    border-bottom-color:
+        rgba(11, 31, 58, 0.20);
+}
+
+.method-icon {
+    color: #125C99;
+}
+
+.method-item h3 {
+    color: #07182D;
+}
+
+.method-item p {
+    color: #526277;
+}
+
+
+/* =====================================================
+   METHODOLOGY IMAGE
+===================================================== */
+
+.methodology-image {
+    box-shadow:
+        0 20px 45px rgba(11, 31, 58, 0.14);
+}
+
+.image-caption {
+    background:
+        rgba(7, 24, 45, 0.92);
+}
+
+
+/* =====================================================
+   ASSESSMENT
+===================================================== */
+
+.assessment {
+    background: #F3F6FA;
+}
+
+.assessment-grid {
+    border-top-color:
+        rgba(11, 31, 58, 0.20);
+
+    border-left-color:
+        rgba(11, 31, 58, 0.20);
+}
+
+.assessment-card {
+    background: #F8FAFC;
+
+    border-right-color:
+        rgba(11, 31, 58, 0.20);
+
+    border-bottom-color:
+        rgba(11, 31, 58, 0.20);
+}
+
+.assessment-card:hover {
+    background: #E1EEF9;
+}
+
+.assessment-icon {
+    color: #125C99;
+}
+
+.assessment-card h3,
+.assessment-trigger h3 {
+    color: #07182D;
+}
+
+.assessment-card p,
+.assessment-extra-inner p {
+    color: #526277;
+}
+
+
+/* =====================================================
+   ASSESSMENT EXPAND BUTTON
+===================================================== */
+
+.assessment-trigger:hover {
+    background: #E1EEF9;
+}
+
+.assessment-arrow {
+    border-color:
+        rgba(11, 31, 58, 0.22);
+
+    color: #125C99;
+}
+
+.assessment-card.active .assessment-arrow {
+    background: #0B1F3A;
+    color: #FFFFFF;
+}
+
+.assessment-details span {
+    background: #DCEBFA;
+    color: #125C99;
+}
+
+
+/* =====================================================
+   SUPPORT SECTION
+===================================================== */
+
+.support {
+    background: #E7EDF4;
+}
+
+.support-box {
+    background:
+        linear-gradient(
+            135deg,
+            #07182D,
+            #0B294A
+        );
+
+    box-shadow:
+        0 20px 50px rgba(11, 31, 58, 0.16);
+}
+
+
+/* =====================================================
+   CTA
+===================================================== */
+
+.cta-overlay {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(7, 24, 45, 0.96),
+            rgba(11, 31, 58, 0.72)
+        );
+}
+
+
+/* =====================================================
+   SECTION HEADINGS
+===================================================== */
+
+.section-heading h2,
+.subjects-heading h2,
+.methodology-content h2 {
+    color: #07182D;
+}
+
+.section-heading h2 span,
+.subjects-heading h2 span,
+.methodology-content h2 span {
+    color: #1769AA;
+}
+
+.section-label {
+    color: #125C99;
+}
+
+
+/* =====================================================
+   MOBILE — DARKER SECTION BACKGROUNDS
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .academic-levels,
+    .methodology,
+    .support {
+        background: #E7EDF4;
+    }
+
+    .academic-intro,
+    .subjects,
+    .assessment {
+        background: #F3F6FA;
+    }
+
+}
