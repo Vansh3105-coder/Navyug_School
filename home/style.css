@@ -2802,3 +2802,533 @@ img {
         line-height: 1.7;
     }
 }
+/* =====================================================
+   CIRCULARS / NOTICE BOARD
+===================================================== */
+
+.circulars {
+    background: var(--cream);
+}
+
+
+/* =========================
+   SECTION HEADING
+========================= */
+
+.circulars .section-heading {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: flex-end;
+
+    gap: 40px;
+
+    margin-bottom: 55px;
+}
+
+
+.circulars .section-label {
+    display: block;
+
+    margin-bottom: 14px;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    color: var(--blue);
+}
+
+
+.circulars .section-heading h2 {
+    margin: 0;
+
+    font-family: var(--serif);
+
+    font-size: clamp(42px, 5vw, 68px);
+
+    font-weight: 500;
+
+    line-height: 1.05;
+
+    color: var(--navy);
+}
+
+
+.circulars .section-heading h2 span {
+    color: var(--blue);
+}
+
+
+.circulars .section-link {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding-bottom: 7px;
+
+    border-bottom: 1px solid var(--navy);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+    color: var(--navy);
+
+    transition:
+        color 0.25s ease,
+        border-color 0.25s ease,
+        gap 0.25s ease;
+}
+
+
+.circulars .section-link:hover {
+    color: var(--blue);
+
+    border-color: var(--blue);
+
+    gap: 17px;
+}
+
+
+/* =========================
+   CIRCULAR LIST
+========================= */
+
+.circular-list {
+    border-top: 1px solid var(--border);
+}
+
+
+.circular-item {
+    border-bottom: 1px solid var(--border);
+
+    background: transparent;
+
+    transition:
+        background 0.3s ease,
+        padding 0.3s ease;
+}
+
+
+.circular-item:hover {
+    background: rgba(255,255,255,0.65);
+}
+
+
+/* =========================
+   TRIGGER
+========================= */
+
+.circular-trigger {
+    width: 100%;
+
+    min-height: 145px;
+
+    display: grid;
+
+    grid-template-columns:
+        100px
+        minmax(0, 1fr)
+        55px;
+
+    align-items: center;
+
+    gap: 35px;
+
+    padding: 25px 10px;
+
+    border: none;
+
+    background: transparent;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    color: inherit;
+}
+
+
+/* =========================
+   DATE
+========================= */
+
+.circular-date {
+    width: 72px;
+
+    height: 72px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    border: 1px solid var(--border);
+
+    background: var(--white);
+
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.circular-day {
+    font-family: var(--serif);
+
+    font-size: 27px;
+
+    line-height: 1;
+
+    color: var(--navy);
+}
+
+
+.circular-month {
+    margin-top: 5px;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    color: var(--blue);
+}
+
+
+.circular-item:hover .circular-date,
+.circular-item.active .circular-date {
+    background: var(--navy);
+
+    border-color: var(--navy);
+
+    transform: translateY(-2px);
+}
+
+
+.circular-item:hover .circular-day,
+.circular-item.active .circular-day {
+    color: white;
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.circular-content {
+    min-width: 0;
+}
+
+
+.circular-meta {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 8px;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
+    color: var(--muted);
+}
+
+
+.circular-badge {
+    padding: 5px 8px;
+
+    background: var(--blue);
+
+    color: white;
+
+    font-size: 8px;
+
+    letter-spacing: 1.5px;
+}
+
+
+.circular-content h3 {
+    margin: 0 0 8px;
+
+    font-family: var(--serif);
+
+    font-size: clamp(21px, 2.2vw, 29px);
+
+    font-weight: 500;
+
+    line-height: 1.2;
+
+    color: var(--navy);
+
+    transition: color 0.25s ease;
+}
+
+
+.circular-item:hover .circular-content h3 {
+    color: var(--blue);
+}
+
+
+.circular-content p {
+    max-width: 720px;
+
+    margin: 0;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    color: var(--muted);
+}
+
+
+/* =========================
+   EXPAND BUTTON
+========================= */
+
+.circular-expand {
+    width: 42px;
+
+    height: 42px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    border: 1px solid var(--border);
+
+    border-radius: 50%;
+
+    background: var(--white);
+
+    font-size: 21px;
+
+    font-weight: 300;
+
+    color: var(--navy);
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.circular-item:hover .circular-expand,
+.circular-item.active .circular-expand {
+    background: var(--navy);
+
+    color: white;
+
+    border-color: var(--navy);
+
+    transform: rotate(45deg);
+}
+
+
+/* =========================
+   EXPANDABLE CONTENT
+========================= */
+
+.circular-extra {
+    display: grid;
+
+    grid-template-rows: 0fr;
+
+    opacity: 0;
+
+    transition:
+        grid-template-rows 0.45s ease,
+        opacity 0.35s ease;
+}
+
+
+.circular-extra-inner {
+    min-height: 0;
+
+    overflow: hidden;
+
+    padding: 0 90px 0 135px;
+
+    transform: translateY(-8px);
+
+    transition:
+        padding 0.45s ease,
+        transform 0.45s ease;
+}
+
+
+.circular-extra-inner p {
+    max-width: 800px;
+
+    margin: 0 0 18px;
+
+    font-size: 14px;
+
+    line-height: 1.85;
+
+    color: var(--muted);
+}
+
+
+.circular-extra-inner a {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding-bottom: 5px;
+
+    border-bottom: 1px solid var(--blue);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
+    color: var(--blue);
+
+    transition:
+        gap 0.25s ease,
+        color 0.25s ease;
+}
+
+
+.circular-extra-inner a:hover {
+    gap: 16px;
+
+    color: var(--navy);
+}
+
+
+/* =========================
+   ACTIVE STATE
+========================= */
+
+.circular-item.active .circular-extra {
+    grid-template-rows: 1fr;
+
+    opacity: 1;
+}
+
+
+.circular-item.active .circular-extra-inner {
+    padding-top: 0;
+
+    padding-bottom: 35px;
+
+    transform: translateY(0);
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 700px) {
+
+    .circulars .section-heading {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        margin-bottom: 40px;
+    }
+
+
+    .circular-trigger {
+        grid-template-columns:
+            65px
+            minmax(0, 1fr)
+            40px;
+
+        gap: 15px;
+
+        padding: 22px 0;
+
+        min-height: 125px;
+    }
+
+
+    .circular-date {
+        width: 58px;
+
+        height: 58px;
+    }
+
+
+    .circular-day {
+        font-size: 22px;
+    }
+
+
+    .circular-month {
+        font-size: 7px;
+    }
+
+
+    .circular-content h3 {
+        font-size: 19px;
+    }
+
+
+    .circular-content p {
+        font-size: 12px;
+
+        line-height: 1.6;
+    }
+
+
+    .circular-expand {
+        width: 35px;
+
+        height: 35px;
+
+        font-size: 18px;
+    }
+
+
+    .circular-extra-inner {
+        padding-left: 80px;
+
+        padding-right: 20px;
+    }
+
+
+    .circular-extra-inner p {
+        font-size: 13px;
+
+        line-height: 1.75;
+    }
+
+}

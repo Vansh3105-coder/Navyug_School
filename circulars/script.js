@@ -1,12 +1,12 @@
 /* =====================================================
    NAVYUG PUBLIC SR. SEC. SCHOOL
-   ABOUT PAGE JAVASCRIPT
+   CIRCULARS PAGE JAVASCRIPT
 ===================================================== */
 
 
-/* =====================================================
+/* =========================
    PAGE LOADER
-===================================================== */
+========================= */
 
 window.addEventListener("load", () => {
 
@@ -15,17 +15,21 @@ window.addEventListener("load", () => {
     if (!loader) return;
 
     setTimeout(() => {
+
         loader.classList.add("hide");
+
     }, 700);
 
 });
 
 
-/* =====================================================
+
+/* =========================
    NAVBAR SCROLL EFFECT
-===================================================== */
+========================= */
 
 const navbar = document.querySelector(".navbar");
+
 
 function handleNavbar() {
 
@@ -43,14 +47,16 @@ function handleNavbar() {
 
 }
 
+
 window.addEventListener("scroll", handleNavbar);
 
 handleNavbar();
 
 
-/* =====================================================
+
+/* =========================
    MOBILE MENU
-===================================================== */
+========================= */
 
 const menuToggle =
     document.querySelector(".menu-toggle");
@@ -82,11 +88,15 @@ mobileLinks.forEach(link => {
     link.addEventListener("click", () => {
 
         if (menuToggle) {
+
             menuToggle.classList.remove("active");
+
         }
 
         if (mobileMenu) {
+
             mobileMenu.classList.remove("open");
+
         }
 
         document.body.classList.remove("menu-open");
@@ -96,9 +106,10 @@ mobileLinks.forEach(link => {
 });
 
 
-/* =====================================================
+
+/* =========================
    SCROLL REVEAL
-===================================================== */
+========================= */
 
 const revealElements =
     document.querySelectorAll(".reveal");
@@ -114,6 +125,10 @@ const revealObserver =
                 if (entry.isIntersecting) {
 
                     entry.target.classList.add("visible");
+
+                } else {
+
+                    entry.target.classList.remove("visible");
 
                 }
 
@@ -135,43 +150,19 @@ revealElements.forEach(element => {
 });
 
 
-/* =====================================================
-   IMAGE FALLBACK
-===================================================== */
 
-const images =
-    document.querySelectorAll("img");
+/* =========================
+   EXPANDABLE CIRCULARS
+========================= */
 
-
-images.forEach(image => {
-
-    image.addEventListener("error", () => {
-
-        image.style.opacity = "0";
-
-        if (image.parentElement) {
-
-            image.parentElement.classList.add(
-                "image-missing"
-            );
-
-        }
-
-    });
-
-});
-/* =====================================================
-   EXPANDABLE VALUES
-===================================================== */
-
-const expandableValues =
-    document.querySelectorAll(".expandable-value");
+const expandableCirculars =
+    document.querySelectorAll(".expandable-circular");
 
 
-expandableValues.forEach(card => {
+expandableCirculars.forEach(card => {
 
     const trigger =
-        card.querySelector(".value-trigger");
+        card.querySelector(".circular-trigger");
 
 
     if (!trigger) return;
@@ -183,16 +174,16 @@ expandableValues.forEach(card => {
             card.classList.contains("active");
 
 
-        /* Close all */
+        /* CLOSE ALL OTHER CIRCULARS */
 
-        expandableValues.forEach(otherCard => {
+        expandableCirculars.forEach(otherCard => {
 
             otherCard.classList.remove("active");
 
         });
 
 
-        /* Open clicked card */
+        /* OPEN CLICKED CIRCULAR */
 
         if (!wasOpen) {
 

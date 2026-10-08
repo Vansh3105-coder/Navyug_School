@@ -225,3 +225,46 @@ expandableHighlights.forEach(card => {
     });
 
 });
+/* =====================================================
+   EXPANDABLE CIRCULARS
+===================================================== */
+
+const expandableCirculars =
+    document.querySelectorAll(".expandable-circular");
+
+
+expandableCirculars.forEach(card => {
+
+    const trigger =
+        card.querySelector(".circular-trigger");
+
+
+    if (!trigger) return;
+
+
+    trigger.addEventListener("click", () => {
+
+        const wasOpen =
+            card.classList.contains("active");
+
+
+        /* Close all circulars */
+
+        expandableCirculars.forEach(otherCard => {
+
+            otherCard.classList.remove("active");
+
+        });
+
+
+        /* Open clicked circular */
+
+        if (!wasOpen) {
+
+            card.classList.add("active");
+
+        }
+
+    });
+
+});
