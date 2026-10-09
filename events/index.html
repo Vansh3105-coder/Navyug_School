@@ -1,0 +1,325 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore school events, celebrations, competitions and activities at Navyug Public Sr. Sec. School, Panipat.">
+    <title>Events | Navyug Public Sr. Sec. School</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="page-loader">
+        <div class="loader-logo">N</div>
+        <p>Loading Events...</p>
+    </div>
+
+    <header class="navbar">
+        <a href="../home/index.html" class="brand">
+            <div class="brand-logo">N</div>
+            <div class="brand-text">
+                <strong>NAVYUG PUBLIC</strong>
+                <span>SR. SEC. SCHOOL</span>
+                <small>Panipat, Haryana</small>
+            </div>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle"
+                aria-label="Open navigation menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="../home/index.html">Home</a>
+            <a href="../about/index.html">About</a>
+            <a href="../academics/index.html">Academics</a>
+            <a href="../admissions/index.html">Admissions</a>
+            <a href="../facilities/index.html">Facilities</a>
+            <a href="index.html" class="active">Events</a>
+            <a href="../circulars/index.html">Circulars</a>
+            <a href="../results/index.html">Results</a>
+            <a href="../gallery/index.html">Gallery</a>
+            <a href="../contact/index.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="events-hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content reveal">
+                <span class="eyebrow">LIFE BEYOND THE CLASSROOM</span>
+                <h1>Every Event Creates<br><span>A Memory.</span></h1>
+                <p>
+                    Celebrating talent, teamwork, creativity and the
+                    unforgettable moments that make school life special.
+                </p>
+                <a href="#upcoming-events" class="btn btn-primary">
+                    Explore Events <span>↓</span>
+                </a>
+            </div>
+
+            <div class="hero-bottom">
+                <span>LEARN · PARTICIPATE · CELEBRATE</span>
+                <span class="hero-line"></span>
+            </div>
+        </section>
+
+        <!-- INTRODUCTION -->
+        <section class="section intro-section">
+            <div class="section-heading reveal">
+                <span class="section-tag">SCHOOL LIFE</span>
+                <h2>More Than Just <span>Academics</span></h2>
+                <p>
+                    School events give students opportunities to express
+                    themselves, discover interests, build confidence and
+                    learn the value of working together.
+                </p>
+            </div>
+
+            <div class="event-highlights">
+                <article class="highlight-card reveal">
+                    <div class="highlight-icon">✦</div>
+                    <h3>Celebrate</h3>
+                    <p>Special occasions and memorable school celebrations.</p>
+                </article>
+
+                <article class="highlight-card reveal">
+                    <div class="highlight-icon">◎</div>
+                    <h3>Compete</h3>
+                    <p>Healthy competition that encourages students to do their best.</p>
+                </article>
+
+                <article class="highlight-card reveal">
+                    <div class="highlight-icon">↗</div>
+                    <h3>Discover</h3>
+                    <p>Opportunities to explore creativity, interests and talents.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- EVENTS -->
+        <section class="section events-section" id="upcoming-events">
+            <div class="section-heading reveal">
+                <span class="section-tag">EVENT CALENDAR</span>
+                <h2>Explore Our <span>Events</span></h2>
+                <p>
+                    Discover the different kinds of activities that can
+                    bring learning and school life together.
+                </p>
+            </div>
+
+            <div class="event-filters reveal" role="group" aria-label="Filter events">
+                <button class="filter-btn active" data-filter="all">All Events</button>
+                <button class="filter-btn" data-filter="celebration">Celebrations</button>
+                <button class="filter-btn" data-filter="academic">Academic</button>
+                <button class="filter-btn" data-filter="sports">Sports</button>
+                <button class="filter-btn" data-filter="cultural">Cultural</button>
+            </div>
+
+            <div class="events-grid">
+
+                <article class="event-card reveal" data-category="celebration">
+                    <div class="event-image image-independence">
+                        <span class="event-category">Celebration</span>
+                        <div class="image-symbol">🇮🇳</div>
+                    </div>
+                    <div class="event-info">
+                        <span class="event-type">NATIONAL OCCASION</span>
+                        <h3>Independence Day</h3>
+                        <p>
+                            A celebration of freedom, unity and national pride
+                            through patriotic activities and student participation.
+                        </p>
+                        <div class="event-footer">
+                            <span>📅 15 August</span>
+                            <span class="event-arrow">↗</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="event-card reveal" data-category="academic">
+                    <div class="event-image image-science">
+                        <span class="event-category">Academic</span>
+                        <div class="image-symbol">⚗</div>
+                    </div>
+                    <div class="event-info">
+                        <span class="event-type">CURIOSITY & DISCOVERY</span>
+                        <h3>Science Exhibition</h3>
+                        <p>
+                            A platform for students to explore scientific ideas,
+                            present projects and develop problem-solving skills.
+                        </p>
+                        <div class="event-footer">
+                            <span>🔬 Innovation</span>
+                            <span class="event-arrow">↗</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="event-card reveal" data-category="sports">
+                    <div class="event-image image-sports">
+                        <span class="event-category">Sports</span>
+                        <div class="image-symbol">🏆</div>
+                    </div>
+                    <div class="event-info">
+                        <span class="event-type">TEAMWORK & FITNESS</span>
+                        <h3>Annual Sports Meet</h3>
+                        <p>
+                            A celebration of physical fitness, perseverance,
+                            teamwork and the spirit of fair competition.
+                        </p>
+                        <div class="event-footer">
+                            <span>⚡ Sportsmanship</span>
+                            <span class="event-arrow">↗</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="event-card reveal" data-category="cultural">
+                    <div class="event-image image-cultural">
+                        <span class="event-category">Cultural</span>
+                        <div class="image-symbol">♫</div>
+                    </div>
+                    <div class="event-info">
+                        <span class="event-type">ARTS & EXPRESSION</span>
+                        <h3>Cultural Programme</h3>
+                        <p>
+                            A space for music, dance, performances and the
+                            creative expression of student talent.
+                        </p>
+                        <div class="event-footer">
+                            <span>🎭 Creativity</span>
+                            <span class="event-arrow">↗</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="event-card reveal" data-category="academic">
+                    <div class="event-image image-quiz">
+                        <span class="event-category">Academic</span>
+                        <div class="image-symbol">?</div>
+                    </div>
+                    <div class="event-info">
+                        <span class="event-type">KNOWLEDGE & CONFIDENCE</span>
+                        <h3>Quiz & Debate</h3>
+                        <p>
+                            Activities designed to encourage clear thinking,
+                            confident speaking and curiosity about the world.
+                        </p>
+                        <div class="event-footer">
+                            <span>💡 Knowledge</span>
+                            <span class="event-arrow">↗</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="event-card reveal" data-category="celebration">
+                    <div class="event-image image-environment">
+                        <span class="event-category">Celebration</span>
+                        <div class="image-symbol">🌱</div>
+                    </div>
+                    <div class="event-info">
+                        <span class="event-type">RESPONSIBILITY & AWARENESS</span>
+                        <h3>Environment Day</h3>
+                        <p>
+                            Activities that can inspire students to care for
+                            nature and think about a more sustainable future.
+                        </p>
+                        <div class="event-footer">
+                            <span>🌍 Our Planet</span>
+                            <span class="event-arrow">↗</span>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
+            <p class="demo-note">
+                Note: These are illustrative event examples for the website demo.
+                Actual school events, dates and schedules must be confirmed
+                before publication.
+            </p>
+        </section>
+
+        <!-- PARTICIPATION -->
+        <section class="participation-section">
+            <div class="participation-inner">
+                <div class="participation-content reveal">
+                    <span class="section-tag light-tag">MAKE EVERY MOMENT COUNT</span>
+                    <h2>Every Student Has<br><span>Something to Share.</span></h2>
+                    <p>
+                        From the classroom to the stage and the playground,
+                        participation helps students develop confidence,
+                        communication and teamwork.
+                    </p>
+                    <a href="../gallery/index.html" class="btn btn-light">
+                        Explore School Gallery <span>↗</span>
+                    </a>
+                </div>
+                <div class="participation-art reveal">
+                    <div class="art-circle circle-one"></div>
+                    <div class="art-circle circle-two"></div>
+                    <div class="art-card">
+                        <span class="art-star">✦</span>
+                        <strong>Learn.</strong>
+                        <strong>Grow.</strong>
+                        <strong>Shine.</strong>
+                        <small>YOUR JOURNEY MATTERS</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="section events-cta">
+            <div class="cta-box reveal">
+                <div>
+                    <span class="section-tag">STAY CONNECTED</span>
+                    <h2>Don't Miss What's <span>Happening.</span></h2>
+                    <p>
+                        For confirmed event dates and announcements,
+                        please get in touch with the school.
+                    </p>
+                </div>
+                <a href="../contact/index.html" class="btn btn-primary">
+                    Contact School <span>↗</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-main">
+            <a href="../home/index.html" class="brand footer-brand">
+                <div class="brand-logo">N</div>
+                <div class="brand-text">
+                    <strong>NAVYUG PUBLIC</strong>
+                    <span>SR. SEC. SCHOOL</span>
+                    <small>Panipat, Haryana</small>
+                </div>
+            </a>
+
+            <p>
+                Supporting learning, creativity and the all-round development
+                of every student.
+            </p>
+
+            <div class="footer-links">
+                <a href="../home/index.html">Home</a>
+                <a href="../about/index.html">About</a>
+                <a href="../academics/index.html">Academics</a>
+                <a href="../admissions/index.html">Admissions</a>
+                <a href="../contact/index.html">Contact</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© <span id="currentYear"></span> Navyug Public Sr. Sec. School</span>
+            <span>Made for learning. Built for the future.</span>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
