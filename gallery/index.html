@@ -1,0 +1,403 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore the photo gallery of Navyug Public Sr. Sec. School, Panipat.">
+    <title>Gallery | Navyug Public Sr. Sec. School</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="page-loader">
+        <div class="loader-logo">N</div>
+        <p>Opening Gallery...</p>
+    </div>
+
+    <header class="navbar">
+        <a href="../home/index.html" class="brand">
+            <div class="brand-logo">N</div>
+            <div class="brand-text">
+                <strong>NAVYUG PUBLIC</strong>
+                <span>SR. SEC. SCHOOL</span>
+                <small>Panipat, Haryana</small>
+            </div>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle"
+                aria-label="Open navigation menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="../home/index.html">Home</a>
+            <a href="../about/index.html">About</a>
+            <a href="../academics/index.html">Academics</a>
+            <a href="../admissions/index.html">Admissions</a>
+            <a href="../facilities/index.html">Facilities</a>
+            <a href="../events/index.html">Events</a>
+            <a href="../circulars/index.html">Circulars</a>
+            <a href="../results/index.html">Results</a>
+            <a href="index.html" class="active">Gallery</a>
+            <a href="../contact/index.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="gallery-hero">
+            <div class="hero-pattern"></div>
+            <div class="hero-content reveal">
+                <span class="eyebrow">A GLIMPSE INTO SCHOOL LIFE</span>
+                <h1>Moments That<br><span>Stay With Us.</span></h1>
+                <p>
+                    Every picture tells a story of learning, friendship,
+                    creativity and the journey of growing together.
+                </p>
+                <a href="#photo-gallery" class="btn btn-primary">
+                    Explore Gallery <span>↓</span>
+                </a>
+            </div>
+
+            <div class="hero-side-note">
+                <span class="side-line"></span>
+                <span>MEMORIES · MILESTONES · MOMENTS</span>
+            </div>
+
+            <div class="hero-decoration decoration-one"></div>
+            <div class="hero-decoration decoration-two"></div>
+        </section>
+
+        <!-- INTRO -->
+        <section class="section gallery-intro">
+            <div class="intro-copy reveal">
+                <span class="section-tag">OUR SCHOOL, THROUGH THE LENS</span>
+                <h2>Little Moments.<br><span>Lasting Memories.</span></h2>
+            </div>
+            <div class="intro-description reveal">
+                <p>
+                    School life is made up of moments worth remembering:
+                    discovering something new, working together, celebrating
+                    achievements and sharing everyday experiences.
+                </p>
+                <p>
+                    Explore the gallery below to see the different sides of
+                    school life.
+                </p>
+            </div>
+        </section>
+
+        <!-- GALLERY -->
+        <section class="section gallery-section" id="photo-gallery">
+            <div class="section-heading reveal">
+                <span class="section-tag">PHOTO COLLECTION</span>
+                <h2>Explore Our <span>Gallery</span></h2>
+                <p>
+                    Select a category, explore the photographs, and click
+                    any image to view it in a larger format.
+                </p>
+            </div>
+
+            <div class="gallery-filters reveal" role="group" aria-label="Filter gallery photos">
+                <button class="filter-btn active" data-filter="all" aria-pressed="true">
+                    All Photos
+                </button>
+                <button class="filter-btn" data-filter="campus" aria-pressed="false">
+                    Campus
+                </button>
+                <button class="filter-btn" data-filter="classroom" aria-pressed="false">
+                    Classrooms
+                </button>
+                <button class="filter-btn" data-filter="activities" aria-pressed="false">
+                    Activities
+                </button>
+                <button class="filter-btn" data-filter="events" aria-pressed="false">
+                    Events
+                </button>
+            </div>
+
+            <div class="gallery-grid">
+
+                <button class="gallery-item gallery-large reveal"
+                        data-category="campus"
+                        data-full="../images/school-building.jpg"
+                        data-title="School Building"
+                        aria-label="View School Building photograph">
+                    <img src="../images/school-building.jpg"
+                         alt="School building"
+                         loading="lazy">
+                    <span class="photo-placeholder">Add school-building.jpg</span>
+                    <span class="gallery-overlay">
+                        <span class="photo-caption">
+                            <small>CAMPUS</small>
+                            <strong>Our School</strong>
+                        </span>
+                        <span class="zoom-icon">↗</span>
+                    </span>
+                </button>
+
+                <button class="gallery-item reveal"
+                        data-category="campus"
+                        data-full="../images/campus.jpg"
+                        data-title="School Campus"
+                        aria-label="View School Campus photograph">
+                    <img src="../images/campus.jpg"
+                         alt="School campus"
+                         loading="lazy">
+                    <span class="photo-placeholder">Add campus.jpg</span>
+                    <span class="gallery-overlay">
+                        <span class="photo-caption">
+                            <small>CAMPUS</small>
+                            <strong>Our Surroundings</strong>
+                        </span>
+                        <span class="zoom-icon">↗</span>
+                    </span>
+                </button>
+
+                <button class="gallery-item reveal"
+                        data-category="classroom"
+                        data-full="../images/classroom.jpg"
+                        data-title="Classroom"
+                        aria-label="View Classroom photograph">
+                    <img src="../images/classroom.jpg"
+                         alt="Classroom"
+                         loading="lazy">
+                    <span class="photo-placeholder">Add classroom.jpg</span>
+                    <span class="gallery-overlay">
+                        <span class="photo-caption">
+                            <small>CLASSROOM</small>
+                            <strong>Learning Together</strong>
+                        </span>
+                        <span class="zoom-icon">↗</span>
+                    </span>
+                </button>
+
+                <button class="gallery-item reveal"
+                        data-category="activities"
+                        data-full="../images/activities.jpg"
+                        data-title="Student Activities"
+                        aria-label="View Student Activities photograph">
+                    <img src="../images/activities.jpg"
+                         alt="Student activities"
+                         loading="lazy">
+                    <span class="photo-placeholder">Add activities.jpg</span>
+                    <span class="gallery-overlay">
+                        <span class="photo-caption">
+                            <small>ACTIVITIES</small>
+                            <strong>Beyond the Classroom</strong>
+                        </span>
+                        <span class="zoom-icon">↗</span>
+                    </span>
+                </button>
+
+                <button class="gallery-item reveal"
+                        data-category="events"
+                        data-full="../images/gallery-1.jpg"
+                        data-title="School Event"
+                        aria-label="View School Event photograph">
+                    <img src="../images/gallery-1.jpg"
+                         alt="School event"
+                         loading="lazy">
+                    <span class="photo-placeholder">Add gallery-1.jpg</span>
+                    <span class="gallery-overlay">
+                        <span class="photo-caption">
+                            <small>EVENTS</small>
+                            <strong>Special Moments</strong>
+                        </span>
+                        <span class="zoom-icon">↗</span>
+                    </span>
+                </button>
+
+                <button class="gallery-item gallery-tall reveal"
+                        data-category="activities"
+                        data-full="../images/gallery-2.jpg"
+                        data-title="School Life"
+                        aria-label="View School Life photograph">
+                    <img src="../images/gallery-2.jpg"
+                         alt="School life"
+                         loading="lazy">
+                    <span class="photo-placeholder">Add gallery-2.jpg</span>
+                    <span class="gallery-overlay">
+                        <span class="photo-caption">
+                            <small>SCHOOL LIFE</small>
+                            <strong>Everyday Experiences</strong>
+                        </span>
+                        <span class="zoom-icon">↗</span>
+                    </span>
+                </button>
+
+                <button class="gallery-item reveal"
+                        data-category="events"
+                        data-full="../images/gallery-3.jpg"
+                        data-title="School Celebration"
+                        aria-label="View School Celebration photograph">
+                    <img src="../images/gallery-3.jpg"
+                         alt="School celebration"
+                         loading="lazy">
+                    <span class="photo-placeholder">Add gallery-3.jpg</span>
+                    <span class="gallery-overlay">
+                        <span class="photo-caption">
+                            <small>EVENTS</small>
+                            <strong>Celebrating Together</strong>
+                        </span>
+                        <span class="zoom-icon">↗</span>
+                    </span>
+                </button>
+
+                <button class="gallery-item reveal"
+                        data-category="classroom"
+                        data-full="../images/gallery-4.jpg"
+                        data-title="Learning Experience"
+                        aria-label="View Learning Experience photograph">
+                    <img src="../images/gallery-4.jpg"
+                         alt="Learning experience"
+                         loading="lazy">
+                    <span class="photo-placeholder">Add gallery-4.jpg</span>
+                    <span class="gallery-overlay">
+                        <span class="photo-caption">
+                            <small>LEARNING</small>
+                            <strong>Discovering More</strong>
+                        </span>
+                        <span class="zoom-icon">↗</span>
+                    </span>
+                </button>
+
+                <button class="gallery-item reveal"
+                        data-category="activities"
+                        data-full="../images/gallery-5.jpg"
+                        data-title="Student Participation"
+                        aria-label="View Student Participation photograph">
+                    <img src="../images/gallery-5.jpg"
+                         alt="Student participation"
+                         loading="lazy">
+                    <span class="photo-placeholder">Add gallery-5.jpg</span>
+                    <span class="gallery-overlay">
+                        <span class="photo-caption">
+                            <small>ACTIVITIES</small>
+                            <strong>Learning by Doing</strong>
+                        </span>
+                        <span class="zoom-icon">↗</span>
+                    </span>
+                </button>
+
+                <button class="gallery-item reveal"
+                        data-category="events"
+                        data-full="../images/gallery-6.jpg"
+                        data-title="Memorable Moments"
+                        aria-label="View Memorable Moments photograph">
+                    <img src="../images/gallery-6.jpg"
+                         alt="Memorable school moments"
+                         loading="lazy">
+                    <span class="photo-placeholder">Add gallery-6.jpg</span>
+                    <span class="gallery-overlay">
+                        <span class="photo-caption">
+                            <small>MEMORIES</small>
+                            <strong>Moments to Remember</strong>
+                        </span>
+                        <span class="zoom-icon">↗</span>
+                    </span>
+                </button>
+
+            </div>
+
+            <p class="gallery-note">
+                Demo gallery: replace these image files with authentic school
+                photographs and update the captions before publishing.
+            </p>
+        </section>
+
+        <!-- MEMORY BANNER -->
+        <section class="memory-section">
+            <div class="memory-content reveal">
+                <span class="section-tag light-tag">EVERY PICTURE HAS A STORY</span>
+                <h2>Capturing Today.<br><span>Remembering Tomorrow.</span></h2>
+                <p>
+                    The best school memories are made through shared
+                    experiences, new discoveries and moments of achievement.
+                </p>
+                <a href="../events/index.html" class="btn btn-light">
+                    Explore Events <span>↗</span>
+                </a>
+            </div>
+            <div class="memory-decoration">
+                <div class="memory-frame frame-back"></div>
+                <div class="memory-frame frame-front">
+                    <span>✦</span>
+                    <strong>Moments</strong>
+                    <strong>That Matter</strong>
+                    <small>NAVYUG PUBLIC SCHOOL</small>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT CTA -->
+        <section class="section gallery-cta">
+            <div class="cta-box reveal">
+                <div>
+                    <span class="section-tag">STAY CONNECTED</span>
+                    <h2>Be Part of the <span>Journey.</span></h2>
+                    <p>Contact the school for information about activities and events.</p>
+                </div>
+                <a href="../contact/index.html" class="btn btn-primary">
+                    Contact School <span>↗</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox"
+         role="dialog" aria-modal="true" aria-label="Photo viewer"
+         aria-hidden="true">
+        <button class="lightbox-close" id="lightboxClose"
+                aria-label="Close photo viewer">×</button>
+        <button class="lightbox-prev" id="lightboxPrev"
+                aria-label="Previous photo">‹</button>
+
+        <div class="lightbox-content">
+            <img src="" alt="" id="lightboxImage">
+            <div class="lightbox-caption">
+                <span id="lightboxTitle"></span>
+                <span id="lightboxCount"></span>
+            </div>
+        </div>
+
+        <button class="lightbox-next" id="lightboxNext"
+                aria-label="Next photo">›</button>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-main">
+            <a href="../home/index.html" class="brand footer-brand">
+                <div class="brand-logo">N</div>
+                <div class="brand-text">
+                    <strong>NAVYUG PUBLIC</strong>
+                    <span>SR. SEC. SCHOOL</span>
+                    <small>Panipat, Haryana</small>
+                </div>
+            </a>
+
+            <p>
+                Supporting learning, creativity and the all-round development
+                of every student.
+            </p>
+
+            <div class="footer-links">
+                <a href="../home/index.html">Home</a>
+                <a href="../about/index.html">About</a>
+                <a href="../academics/index.html">Academics</a>
+                <a href="../events/index.html">Events</a>
+                <a href="../contact/index.html">Contact</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span>© <span id="currentYear"></span> Navyug Public Sr. Sec. School</span>
+            <span>Made for learning. Built for the future.</span>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
