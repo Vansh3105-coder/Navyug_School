@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",()=>{let b=document.querySelector(".menu-toggle"),m=document.querySelector(".nav-menu");if(!b)return;b.onclick=()=>{let o=m.classList.toggle("open");b.setAttribute("aria-expanded",o)};document.addEventListener("click",e=>{if(!m.contains(e.target)&&!b.contains(e.target))m.classList.remove("open")})});

@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",()=>{let io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("visible");io.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll(".reveal").forEach((e,i)=>{e.style.transitionDelay=Math.min((i%5)*.07,.28)+"s";io.observe(e)})});
